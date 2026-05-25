@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:black;
+    height:100vh;
+}
+
+h1{
+    display:none;
+}
+
+canvas{
+    background-color:black;
+    position:absolute;
+    top:0;
+    left:0;
+}
