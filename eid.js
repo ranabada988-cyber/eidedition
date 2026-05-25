@@ -163,23 +163,22 @@ function launchRockets() {
 } 
 function drawText(){
     if (!showText) return;
-    
-    ctx.font = "80px Arial" ;
 
+    // حساب حجم خط ذكي يتناسب مع عرض الشاشة (موبايل أو PC)
+    let fontSize = canvas.width * 0.08; 
+    if (fontSize > 80) fontSize = 80;  // أقصى حجم على الكمبيوتر
+    if (fontSize < 35) fontSize = 35;  // أقل حجم على الموبايل عشان ما تختفي
+
+    ctx.font = "bold" + fontSize + "px Arial";
     ctx.fillStyle = "white";
-
     ctx.textAlign = "center";
-
+    ctx.textBaseline = "middle"; // يخلي الكلمة بنص الارتفاع بالظبط
+    
     ctx.shadowColor = "white";
-    ctx.shadowBlur= 30;
+    ctx.shadowBlur = 30;
 
-    ctx.fillText(
-        "Eid Adha Mubarak ✨",
-        canvas.width / 2 ,
-        canvas.height / 2 
-
-    );
-
+    // رسم النص بالسنتر تماماً
+    ctx.fillText("Eid Adha Mubarak ✨", canvas.width / 2, canvas.height / 2);
 }
 function animate(){
     ctx.fillStyle ="rgba(0,0,0,0.2)";
